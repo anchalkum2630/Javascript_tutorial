@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: #414141;color:aliceblue">
+  <h2>Amazing Images</h2>
+  <ul style="display:flex" id="images">
+  <!-- we want, when we click on picture it will show that element name -->
+  <!-- inline javascript we write -> onclick="alert('butterfly')" this method is not suggested-->
+     <l1><img id="butterfly" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\butterfly.jpg" width="200px"></l1>
+     <l1><img id="flower" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\flower.jpg" width="200px"></l1>
+     <l1><img id="forest" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\forest.jpg" width="200px"></l1>
+     <l1><img id="mountain" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\mountain.jpg" width="200px"></l1>
+     <li><img id="river" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\river.jpg" width="200px"></li>
+     <li><img id="rose" src="C:\Users\envy\OneDrive\Desktop\THAPPA TUTS\Javascript\Code_chai\Events\image\rose.jpg" width="200px"></li>
+     <li><a href="https://google.com" id="google" style="color:white;">google</a></li>
+  </ul><br>
+   <center><div id="display" style="width:500px; height:400px;background-size: cover;background-repeat: no-repeat;border:1px solid red;"></div></center> 
+</body>
+
+<script>
+// document.getElementById('butterfly').addEventListener('click',function(){
+//     alert('butterfly selected')
+//     document.getElementById('display').innerHTML = '<img src="' + this.src + '" style="background-size:cover;background-repeat:no-repeat;width:500px;height:400px;">';
+// })
+//  document.getElementById('butterfly').onclick=function(){
+//     alert('butterfly')
+//  }  this is not much good approach by this we didn't get much information...so we should use eventlistener
+
+// document.getElementById('flower').addEventListener('click',function(e){
+//     console.log(e)
+//     document.getElementById('display').innerHTML = '<img src="' + this.src + '" style="background-size:cover;background-repeat:no-repeat;width:500px;height:400px;">';
+//     alert('flower selected')
+// },false)
+// by this process it will take time
+const select=document.querySelector('#images');
+select.addEventListener('click',function(e){
+    alert(e.target.id+" clicked")
+    document.getElementById('display').innerHTML = '<img src="' + e.target.src + '" style="background-size:cover;background-repeat:no-repeat;width:500px;height:400px;">';
+    console.log(e.target.parentNode)
+    let removeIt=e.target.parentNode
+    removeIt.remove();
+    // next way to remove
+    // removeIt.parentNode.removeChild(removeIt)
+    // if google.com come in li then the problem occur it will delete whole list then to overcome we use if condition if(e.target.tagName==='IMG') then delete
+},false)
+
+//  down code is to understand bubbling as butterfly is selected then first inside butterfly activity will work then images will work
+ document.getElementById('butterfly').addEventListener('click',function(e){
+     alert('butterfly selected')
+    //  we want this code work then upper code that is li worked then ul should not work then do
+    e.stopPropagation()
+ },false)
+
+// false->doesn't affect anything -> this is eventbubbling small to big work
+//true-> it is capturing event big to small work 
+// after function,we can write false or true
+//attachEvent(  is used in internet explorer)
+// jQuery- in this .on is used
+// this we should->type,timestamp,defaultPrevented,target,toElement,srcElement,currentTarget
+// clientX,clintY,screenX,screenY->interview related topic
+// altkey,cltkey,shiftkey,keycode
+
+//---> i want we click on google link it should not open
+ document.getElementById('google').addEventListener('click',function(e){
+    e.preventDefault();
+    alert("clicked");
+ })  
+</script>
+</html>

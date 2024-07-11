@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form with Print</title>
+</head>
+<body>
+    <h1>Sample Form</h1>
+    <form id="sampleForm">
+        <!-- Text input -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- Email input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <!-- Password input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <!-- Date input -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required><br><br>
+        
+        <!-- Radio buttons -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+        
+        <!-- Checkbox -->
+        <label for="subscribe">Subscribe to newsletter:</label>
+        <input type="checkbox" id="subscribe" name="subscribe"><br><br>
+        
+        <!-- Dropdown menu -->
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="us">United States</option>
+            <option value="ca">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="au">Australia</option>
+        </select><br><br>
+        
+        <!-- Textarea -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+        
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('sampleForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.querySelector('input[name="gender"]:checked')?.value;
+            const subscribe = document.getElementById('subscribe').checked ? 'Yes' : 'No';
+            const country = document.getElementById('country').value;
+            const message = document.getElementById('message').value;
+
+            // Create a new window with the filled information
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`<h2>Submitted Information</h2>`);
+            printWindow.document.write(`<p><strong>Name:</strong> ${name}</p>`);
+            printWindow.document.write(`<p><strong>Email:</strong> ${email}</p>`);
+            printWindow.document.write(`<p><strong>Date of Birth:</strong> ${dob}</p>`);
+            printWindow.document.write(`<p><strong>Gender:</strong> ${gender || 'Not specified'}</p>`);
+            printWindow.document.write(`<p><strong>Subscribed:</strong> ${subscribe}</p>`);
+            printWindow.document.write(`<p><strong>Country:</strong> ${country}</p>`);
+            printWindow.document.write(`<p><strong>Message:</strong> ${message}</p>`);
+            
+            // Print the new window
+            printWindow.print();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Javascript</title>
+</head>
+<body>
+  <h1>Chai aur Javascript</h1>
+  <button id="start">Start</button>
+  <button id="stop">Stop</button>
+  <div class="work"></div>
+    
+</body>
+<script>
+//    const print=function(){
+//       console.log("anchal",Date.now())
+//    }
+//    setInterval(print,1000)
+// another way
+    
+    const print=function(str){
+      const p=document.createElement('p');
+      p.className="add";
+      p.append(document.createTextNode("my name is anchal"))
+      console.log(str,Date.now())
+      document.querySelector('.work').appendChild(p);
+      document.querySelector(".work").style.color="red";
+      
+   }
+   let changeme;
+   document.querySelector('#start').addEventListener('click',function(){
+         changeme=setInterval(print,1000,"hi")
+   })
+   document.querySelector('#stop').addEventListener('click',function(){
+         clearInterval(changeme)
+   })
+
+</script>
+</html>
