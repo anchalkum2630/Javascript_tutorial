@@ -1,0 +1,49 @@
+STREAM -> they are objects thatled you read data from a source or write data to a destination in continuous fashion.In node.js,there are four types of streams-
+Streaming means listening to music or watching video in real time instead of downloading a file to your computer and watching it later.
+
+1. readable-> stream which is used for read operation
+2. Writable-> Stream which is used for write operation
+3.Duplex->Stream which can be used for both read and write operation \
+4.Transform->A type of duplex stream where the output is computed based on input
+
+//finsally read by stream
+
+Each type of Stream is an EventEmitter instance and throws several events at different instance of times.For example,
+some of the commonly used event are
+DATA-> This event is fired when there is data is available to read.
+END->This event is fired when there is no more data to read         
+ERROR-> This event is fired when there is any error receiving or writing data.
+FINISH->This event is fired when all the data has been flushed to underlying system
+
+
+LOVE YOU ALL
+
+
+stream.pipe()-> the method used to take a readable stream and connect it to a writable stream
+
+
+
+
+//copy
+STREAM -> they are objects thatled you read data from a source or write data to a destination in continuous fashion.In node.js,there are four types of streams-
+Streaming means listening to music or watching video in real time instead of downloading a file to your computer and watching it later.
+
+1. readable-> stream which is used for read operation
+2. Writable-> Stream which is used for write operation
+3.Duplex->Stream which can be used for both read and write operation \
+4.Transform->A type of duplex stream where the output is computed based on input
+
+//finsally read by stream
+
+Each type of Stream is an EventEmitter instance and throws several events at different instance of times.For example,
+some of the commonly used event are
+DATA-> This event is fired when there is data is available to read.
+END->This event is fired when there is no more data to read         
+ERROR-> This event is fired when there is any error receiving or writing data.
+FINISH->This event is fired when all the data has been flushed to underlying system
+
+
+LOVE YOU ALL
+
+
+stream.pipe()-> the method used to take a readable stream and connect it to a writable stream

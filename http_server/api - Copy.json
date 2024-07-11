@@ -1,0 +1,32 @@
+[
+    {
+        "id":1,
+        "name":"anchal",
+        "age":20,
+        "hobby":"sleeping"
+    },
+    {
+        "id":2,
+        "name":"saloni",
+        "age":21,
+        "hobby":"sleeping"
+    },
+    {
+        "id":3,
+        "name":"sristy",
+        "age":22,
+        "hobby":"sing"
+    },
+    {
+        "id":4,
+        "name":"Roshni",
+        "age":23,
+        "hobby":"Dance"
+    },
+    {
+        "id":5,
+        "name":"ritu",
+        "age":19,
+        "hobby":"cooking"
+    }
+]

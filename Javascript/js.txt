@@ -1,0 +1,26 @@
+Javascript improves the user exprience of the web page by converting it from static page into an  interactive one.
+OR
+Javascript is used to update and change both HTML & CSS. It adds behaviour to web pages.
+
+In 1995 - created by Brendan Eich at Netscape in just 10 days
+Language name changed--> Mocha -> Livescript -> Javascript
+
+
+famous in 1996 then it submitted to ECMA international in 1997 named as ECMAscript
+ES6 anuual change started in 2015
+
+DATA TYPES-->
+Primary-> string, number, boolean(true,false), undefined(we have not given any value in data type), null, bigint(666678766n), symbol
+object data types-> an object an array a date
+
+//syntax error  and  reference error
+typeof->console.log(typeof myName)
+//typeof null will give object
+
+//to covert stringnumber to number-> typeof +myFav  or number(myFav) here number is constructor
+//number to string -> (console.log(typeof str+"")) or string(str)
+//ctrl+`->terminal open and close
+
+
+
+
